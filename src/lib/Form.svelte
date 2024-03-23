@@ -1,6 +1,6 @@
 <script>
   import * as Yup from "yup";
-  import "../app.css";
+  import "./app.css";
   import { createEventDispatcher } from "svelte";
   export let initialValue = {};
   export let schemaValidator = {};
@@ -58,6 +58,10 @@
       case "date":
         schema = schema.date(...validator.value);
         break;
+      default:
+        throw new Error(
+          `The key '${validator.key}' does not exist in the schemaValidator. Keys should be one of the following types: string, required, min, max, email, matches, oneOf, integer, positive, negative, url, or date.`
+        );
     }
 
     if (validator.next) {
@@ -79,6 +83,7 @@
       // Validate user input
       await yupValidator.validate(values);
       dispatch("submit", values);
+      values = { ...initialValue };
     } catch (e) {
       const elem = document.getElementById(`${e.path}@solisoma@error`);
       const field = document.querySelector(`[name="${e.path}"]`);

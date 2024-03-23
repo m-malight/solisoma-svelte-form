@@ -58,6 +58,10 @@
       case "date":
         schema = schema.date(...validator.value);
         break;
+      default:
+        throw new Error(
+          `The key '${validator.key}' does not exist in the schemaValidator. Keys should be one of the following types: string, required, min, max, email, matches, oneOf, integer, positive, negative, url, or date.`
+        );
     }
 
     if (validator.next) {
