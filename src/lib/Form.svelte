@@ -1,6 +1,6 @@
 <script>
   import * as Yup from "yup";
-  import "./app.css";
+  import "../app.css";
   import { createEventDispatcher } from "svelte";
   export let initialValue = {};
   export let schemaValidator = {};
