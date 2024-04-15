@@ -41,7 +41,7 @@
         schema = schema.matches(...validator.value);
         break;
       case "oneOf":
-        schema = schema.oneOf(...validator.value);
+        schema = schema.oneOf(validator.value);
         break;
       case "integer":
         schema = schema.integer(validator.value);
@@ -56,7 +56,7 @@
         schema = schema.url(validator.value);
         break;
       case "date":
-        schema = schema.date(...validator.value);
+        schema = schema.date();
         break;
       default:
         throw new Error(
