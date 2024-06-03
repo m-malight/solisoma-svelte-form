@@ -6,7 +6,7 @@
   export let schemaValidator = {};
   export let yupValidator = null;
 
-  let values = { ...initialValue };
+  $: values = { ...initialValue };
   const dispatch = createEventDispatcher();
 
   $: if (!yupValidator) {
