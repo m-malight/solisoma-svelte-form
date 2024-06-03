@@ -1,6 +1,6 @@
 {
   "name": "@solisoma/svelte-form",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "author": "solisoma <solisomamadubueze@gmail.com>",
   "devDependencies": {
